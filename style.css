@@ -5,6 +5,7 @@
     --lightblue: #98c1d9;
     --orange: #ee6c4d;
     --black: #293241;
+    --sidemargin: 3rem;
 }
 
 * {
@@ -19,10 +20,9 @@ html, body {
 
 body {
     font-family: 'Nunito', sans-serif;
+    font-weight: 400;
     color: var(--black);
 }
-
-nav, section { padding: 1rem 2rem; }
 
 nav, section, footer, ul {
     display: flex;
@@ -30,12 +30,21 @@ nav, section, footer, ul {
     place-items: center;
 }
 
-nav { justify-content: space-between; }
-nav ul li { padding: 0 2rem; }
+nav { 
+    padding: 1rem var(--sidemargin);
+    justify-content: space-between; 
+}
+nav ul { margin: 0; }
+nav ul li { padding: 0 1rem; }
+
+section { 
+    padding: 6rem var(--sidemargin) 0 0;
+}
+
+footer { background: var(--lightblue); }
+footer p { margin-bottom: 0; }
 
 li { list-style: none; }
-
-section { padding-top: 6rem; }
 
 img { max-width: 100%; }
 
@@ -46,14 +55,16 @@ button {
     border: none;
 }
 
-footer { background: var(--lightblue); }
-footer p { margin-bottom: 0; }
+h1 { margin: 0; }
+h2 { font-weight: 400; }
+h3 { font-weight: 800; }
 
 #ribbon {
-    padding: 0.5rem;
+    padding: 1rem 0;
     background: var(--darkblue);
     color: white;
     text-align: center;
+    font-weight: 800;
 }
 
 #hero {
