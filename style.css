@@ -5,7 +5,6 @@
     --lightblue: #98c1d9;
     --orange: #ee6c4d;
     --black: #293241;
-    --sidemargin: 3rem;
 }
 
 * {
@@ -24,6 +23,8 @@ body {
     color: var(--black);
 }
 
+nav, section, footer { padding: 0 4rem}
+
 nav, section, footer, ul {
     display: flex;
     place-content: center;
@@ -31,18 +32,25 @@ nav, section, footer, ul {
 }
 
 nav { 
-    padding: 1rem var(--sidemargin);
-    justify-content: space-between; 
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-items: flex-end;
+    justify-content: space-between;
 }
-nav ul { margin: 0; }
-nav ul li { padding: 0 1rem; }
 
 section { 
-    padding: 6rem var(--sidemargin) 0 0;
+    padding-top: 6rem;
 }
 
-footer { background: var(--lightblue); }
+footer {
+    display: grid;
+    grid-template-areas: "contact   sitemap   resource"
+                         "copyright copyright copyright"; 
+    background: var(--lightblue); 
+}
 footer p { margin-bottom: 0; }
+
+ul { flex-direction: column;}
 
 li { list-style: none; }
 
@@ -57,7 +65,18 @@ button {
 
 h1 { margin: 0; }
 h2 { font-weight: 400; }
-h3 { font-weight: 800; }
+h3, blockquote { 
+    font-size: 3rem;
+    font-weight: 800; 
+}
+
+#quick-contact {
+    flex-direction: row;
+    margin: 0;
+}
+#quick-contact li {
+    padding: 0 1rem;
+}
 
 #ribbon {
     padding: 1rem 0;
@@ -82,8 +101,15 @@ h3 { font-weight: 800; }
     display: grid;
     grid-template-areas: "title title title"
                          "card  card  card";
+    column-gap: 4rem;
+    align-items: flex-start;
+    /* margin: 4rem; */
 }
 #feature1 h2 { grid-area: title; }
+#feature1 .card {
+    /* max-width: 25rem; */
+}
+/* #feature1 h3 { padding: 0; } */
 
 #testimonies {
     display: grid;
@@ -94,3 +120,7 @@ h3 { font-weight: 800; }
 #testimonies img { grid-area: img; }
 #testimonies .worked-with { grid-area: logos; }
 #testimonies .worked-with img { height: 40px; }
+
+#full-contact { grid-area: contact; }
+#site-map { grid-area: sitemap; }
+#resource { grid-area: resource; }
