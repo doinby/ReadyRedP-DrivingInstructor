@@ -23,7 +23,7 @@ body {
     color: var(--black);
 }
 
-nav, section, footer { padding: 0 4rem}
+nav, section, footer { padding: 0 10%; }
 
 nav, section, footer, ul {
     display: flex;
@@ -39,7 +39,8 @@ nav {
 }
 
 section { 
-    padding-top: 6rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 footer {
@@ -50,28 +51,33 @@ footer {
 }
 footer p { margin-bottom: 0; }
 
-ul { flex-direction: column;}
+ul { flex-direction: column; }
 
 li { list-style: none; }
 
 img { max-width: 100%; }
 
 button {
-    padding: 0.5rem 1rem;
+    padding: 1rem 3rem;
+    border: none;
     background: var(--orange);
     color: white;
-    border: none;
+    font-size: medium;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 h1 { margin: 0; }
 h2 { font-weight: 400; }
 h3, blockquote { 
+    color: var(--darkblue);
     font-size: 3rem;
     font-weight: 800; 
+    line-height: 100%;
 }
 
 #quick-contact {
-    flex-direction: row;
+    flex-direction: row-reverse; 
     margin: 0;
 }
 #quick-contact li {
@@ -79,6 +85,7 @@ h3, blockquote {
 }
 
 #ribbon {
+    margin: 0;
     padding: 1rem 0;
     background: var(--darkblue);
     color: white;
@@ -89,27 +96,32 @@ h3, blockquote {
 #hero {
     position: relative;
     flex-direction: column;
-    outline: 1rem solid var(--lightblue);
+    margin: 0 5%;
+    padding: 10rem 0 2rem 0;
+    outline: 0.7rem solid var(--lightblue);
     outline-offset: -2rem;
 }
+#hero h3 { 
+    margin: 0; 
+    line-height: 80%;
+}
 #hero h2 {
-    margin: 0;
-    padding: 0;
+    margin: 0 0 4rem 0;
 }
 
 #feature1 {
     display: grid;
     grid-template-areas: "title title title"
                          "card  card  card";
-    column-gap: 4rem;
+    column-gap: 6rem;
     align-items: flex-start;
-    /* margin: 4rem; */
 }
 #feature1 h2 { grid-area: title; }
-#feature1 .card {
-    /* max-width: 25rem; */
+#feature1::after {
+    width: 100px;
+    height: 100px;
+    background: var(--lightblue);
 }
-/* #feature1 h3 { padding: 0; } */
 
 #testimonies {
     display: grid;
