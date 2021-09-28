@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,800;1,400;1,800&display=swap');
 
 :root {
-    --darkblue: #3d5a80;
-    --lightblue: #98c1d9;
-    --orange: #ee6c4d;
+    /* --darkblue: #495867;
+    --lightblue: #bdd5ea;
+    --orange: #fe5f55;
+    --black: #293241; */
+    
+    --darkblue: #023047;
+    --lightblue: #8ecae6;
+    /* --lightblue: #219ebc; */
+    --orange: #fb8500;
+    --yellow: #ffb703;
     --black: #293241;
 }
 
@@ -23,7 +30,7 @@ body {
     color: var(--black);
 }
 
-nav, section, footer { padding: 0 10%; }
+nav, section, footer { padding: 0 5%; }
 
 nav, section, footer, ul {
     display: flex;
@@ -39,14 +46,16 @@ nav {
 }
 
 section { 
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
 }
 
 footer {
     display: grid;
     grid-template-areas: "contact   sitemap   resource"
                          "copyright copyright copyright"; 
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     background: var(--lightblue); 
 }
 footer p { margin-bottom: 0; }
@@ -70,10 +79,11 @@ button {
 h1 { margin: 0; }
 h2 { font-weight: 400; }
 h3, blockquote { 
+    margin-bottom: 0;
     color: var(--darkblue);
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 800; 
-    line-height: 100%;
+    line-height: 110%;
 }
 
 #quick-contact {
@@ -96,8 +106,9 @@ h3, blockquote {
 #hero {
     position: relative;
     flex-direction: column;
-    margin: 0 5%;
-    padding: 10rem 0 2rem 0;
+    height: 75vh;
+    margin: 0 2rem;
+    padding-bottom: 8rem;
     outline: 0.7rem solid var(--lightblue);
     outline-offset: -2rem;
 }
@@ -105,32 +116,68 @@ h3, blockquote {
     margin: 0; 
     line-height: 80%;
 }
-#hero h2 {
-    margin: 0 0 4rem 0;
+#hero h2 { margin: 1rem 0 2rem 0; }
+#hero img {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
 }
 
 #feature1 {
+    position: relative;
     display: grid;
     grid-template-areas: "title title title"
                          "card  card  card";
-    column-gap: 6rem;
     align-items: flex-start;
+    justify-content: space-between;
 }
 #feature1 h2 { grid-area: title; }
-#feature1::after {
-    width: 100px;
-    height: 100px;
+#feature1 .card { padding: 0 4rem 4rem 4rem; }
+#feature1::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    height: 35%;
+    margin-bottom: 10rem;
     background: var(--lightblue);
+    z-index: -1;
 }
 
-#testimonies {
-    display: grid;
-    grid-template-areas: "quote img"
-                         "logos logos";
+#testimonies { flex-direction: column; }
+#testimonies .customer-quote * {
+    margin: 0;
 }
-#testimonies .customer-quote { grid-area: quote; }
-#testimonies img { grid-area: img; }
-#testimonies .worked-with { grid-area: logos; }
+#testimonies .customer-quote {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    height: 750px;
+}
+#testimonies .customer-quote .quote-paragraph {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 500px;
+    padding: 4rem;
+    outline: 0.7rem solid var(--lightblue);
+    outline-offset: 2rem;
+    z-index: 1;
+}
+#testimonies .customer-quote img { 
+    max-width: 100%;
+    margin-left: 450px; 
+}
+#testimonies .worked-with {
+    grid-area: logos; 
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 4rem;
+    opacity: 75%;
+}
 #testimonies .worked-with img { height: 40px; }
 
 #full-contact { grid-area: contact; }
