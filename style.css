@@ -1,14 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,800;1,400;1,800&display=swap');
 
 :root {
-    /* --darkblue: #495867;
-    --lightblue: #bdd5ea;
-    --orange: #fe5f55;
-    --black: #293241; */
-    
     --darkblue: #023047;
     --lightblue: #8ecae6;
-    /* --lightblue: #219ebc; */
+    --mediumblue: #219ebc;
     --orange: #fb8500;
     --yellow: #ffb703;
     --black: #293241;
@@ -51,14 +46,16 @@ section {
 }
 
 footer {
+    position: relative;
     display: grid;
-    grid-template-areas: "contact   sitemap   resource"
-                         "copyright copyright copyright"; 
+    grid-template-areas: "contact   sitemap   resources"
+    "copyright copyright copyright"; 
     padding-top: 4rem;
     padding-bottom: 4rem;
+    align-items: flex-start;
+    justify-content: space-between;
     background: var(--lightblue); 
 }
-footer p { margin-bottom: 0; }
 
 ul { flex-direction: column; }
 
@@ -88,6 +85,9 @@ h3, blockquote {
     font-weight: 800; 
     line-height: 110%;
 }
+h4 { margin: 0 0 1rem 0;}
+
+p, address { line-height: 160%; }
 
 #quick-contact {
     flex-direction: row-reverse; 
@@ -111,6 +111,7 @@ h3, blockquote {
     flex-direction: column;
     height: 75vh;
     margin: 0 2rem;
+    padding: 5rem 0 15rem 0;
     outline: 0.7rem solid var(--lightblue);
     outline-offset: -2rem;
 }
@@ -128,8 +129,9 @@ h3, blockquote {
 #feature1 {
     position: relative;
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "title title title"
-                         "card  card  card";
+    "card  card  card";
     align-items: flex-start;
     justify-content: space-between;
 }
@@ -192,10 +194,50 @@ h3, blockquote {
 }
 .worked-with img { height: 40px; }
 
+#price-package {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-areas: "title title title"
+    "card  card  card";
+    place-content: center;
+    margin: 0 10rem;
+}
+#price-package h2 { grid-area: title; }
+
 #price-package .price-card {
     padding: 4rem;
 }
+#price-package .card-highlight {
+    outline: 0.7rem solid var(--yellow);
+    outline-offset: 1rem;
+    font-size: 22px;
+    z-index: -1;
+}
 
 #full-contact { grid-area: contact; }
+#full-contact .social-media {
+    flex-direction: row;
+    gap: 1rem;
+    margin: 1rem 0 0 0;
+    padding: 0;
+}
 #site-map { grid-area: sitemap; }
-#resource { grid-area: resource; }
+#resources { grid-area: resources; }
+.links {
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 1rem 0 0 0;
+    padding: 0;
+}
+.copyright {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin: 1rem 0;
+    padding: 0;
+}
+.copyright h4 { margin: 0; padding: 0;}

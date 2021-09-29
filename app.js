@@ -1,5 +1,6 @@
 const $logoContainer = document.querySelector('.worked-with');
 const $priceContainers = document.querySelectorAll('.price');
+const $copyrightYear = document.querySelector('#copyright-year');
 
 const logoNames = [
     'asgardia',
@@ -36,5 +37,14 @@ window.onload = () => {
         });
     }
     addPrice();
+
+    function addCopyright() {
+        const today = new Date()
+        const currentYear = today.getUTCFullYear();
+
+        // Dynamically update current year
+        $copyrightYear.textContent = `© ${currentYear} All Right Reserved`;
+    }
+    addCopyright();
 }
 
