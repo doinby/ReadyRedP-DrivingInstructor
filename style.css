@@ -77,7 +77,10 @@ button {
 }
 
 h1 { margin: 0; }
-h2 { font-weight: 400; }
+h2 {
+    font-size: 1.8rem; 
+    font-weight: 400; 
+}
 h3, blockquote { 
     margin-bottom: 0;
     color: var(--darkblue);
@@ -108,7 +111,6 @@ h3, blockquote {
     flex-direction: column;
     height: 75vh;
     margin: 0 2rem;
-    padding-bottom: 8rem;
     outline: 0.7rem solid var(--lightblue);
     outline-offset: -2rem;
 }
@@ -119,7 +121,7 @@ h3, blockquote {
 #hero h2 { margin: 1rem 0 2rem 0; }
 #hero img {
     position: absolute;
-    bottom: 0;
+    bottom: -2rem;
     z-index: -1;
 }
 
@@ -131,8 +133,11 @@ h3, blockquote {
     align-items: flex-start;
     justify-content: space-between;
 }
-#feature1 h2 { grid-area: title; }
-#feature1 .card { padding: 0 4rem 4rem 4rem; }
+#feature1 h2 { 
+    grid-area: title; 
+    margin: 0;
+}
+.feature1-card { padding: 0 4rem 4rem 4rem; }
 #feature1::before {
     content: "";
     position: absolute;
@@ -145,10 +150,10 @@ h3, blockquote {
 }
 
 #testimonies { flex-direction: column; }
-#testimonies .customer-quote * {
+.customer-quote * {
     margin: 0;
 }
-#testimonies .customer-quote {
+.customer-quote {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -156,7 +161,17 @@ h3, blockquote {
     justify-content: center;
     height: 750px;
 }
-#testimonies .customer-quote .quote-paragraph {
+.customer-quote img { 
+    max-width: 100%;
+    margin-left: 450px; 
+}
+.quote-paragraph blockquote::before {
+    content: '\275D';
+    position: absolute;
+    top: 3rem;
+    font-size: 5rem;
+}
+.quote-paragraph {
     position: absolute;
     top: 2rem;
     left: 2rem;
@@ -166,11 +181,8 @@ h3, blockquote {
     outline-offset: 2rem;
     z-index: 1;
 }
-#testimonies .customer-quote img { 
-    max-width: 100%;
-    margin-left: 450px; 
-}
-#testimonies .worked-with {
+.quote-paragraph blockquote { padding: 2rem 0; }
+.worked-with {
     grid-area: logos; 
     display: flex;
     justify-content: space-between;
@@ -178,7 +190,11 @@ h3, blockquote {
     margin-top: 4rem;
     opacity: 75%;
 }
-#testimonies .worked-with img { height: 40px; }
+.worked-with img { height: 40px; }
+
+#price-package .price-card {
+    padding: 4rem;
+}
 
 #full-contact { grid-area: contact; }
 #site-map { grid-area: sitemap; }

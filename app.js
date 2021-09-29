@@ -1,19 +1,40 @@
-// Populate logos images to logo container 
+const $logoContainer = document.querySelector('.worked-with');
+const $priceContainers = document.querySelectorAll('.price');
+
+const logoNames = [
+    'asgardia',
+    'fossa',
+    'ideaa',
+    'solaytic',
+    'velocity-9',
+    'ztos'
+];
+const fileType = '.png';
+let logoPaths = [];
+
+const price = [60, 500, 900];
+const lessonPack = [0, 10, 20];
+
+
 window.onload = () => {
-    const logoNames = [
-        'asgardia',
-        'fossa',
-        'ideaa',
-        'solaytic',
-        'velocity-9',
-        'ztos'
-    ];
-    const fileType = '.png';
-    const $logoContainer = document.querySelector('.worked-with');
-    let logoPaths = [];
-    for(let i in logoNames) {
-        logoPaths += `<img src="images/logos/${logoNames[i]}${fileType}" alt="${logoNames[i]}'s company logos">`;
+    function addLogoImages() {
+        for(let i in logoNames) {
+            logoPaths += `<img src="images/logos/${logoNames[i]}${fileType}" alt="${logoNames[i]}'s company logos">`;
+        }
+        // Populate logos images to logo container
+        $logoContainer.innerHTML = logoPaths;
     }
-    console.log(logoPaths);
-    $logoContainer.innerHTML = logoPaths;
+    addLogoImages();
+
+    function addPrice() {
+        let perLesson;
+        $priceContainers.forEach((container, index) => {
+            if(index > 0) {
+                perLesson = price[index] / lessonPack[index];
+                container.textContent = `$${perLesson.toFixed(0)} / per lesson or $${price[index]}`;
+            } else container.textContent = `$${price[index]}`;
+        });
+    }
+    addPrice();
 }
+
