@@ -41,21 +41,29 @@ nav {
 }
 
 section { 
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-top: 2rem;
+    padding-bottom: 8rem;
 }
 
 footer {
     position: relative;
     display: grid;
-    grid-template-areas: "contact   sitemap   resources"
-    "copyright copyright copyright"; 
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    grid-template-areas: "contact sitemap resources";
+    gap: 10%;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
+    padding-top: 5%;
+    padding-bottom: 5%;
     background: var(--lightblue); 
 }
+footer h4 { color: var(--mediumblue); }
+
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+a:hover, a:active { color: var(--mediumblue); }
 
 ul { flex-direction: column; }
 
@@ -71,6 +79,10 @@ button {
     font-size: medium;
     font-weight: 800;
     text-transform: uppercase;
+}
+button:hover, button:active { 
+    background: var(--mediumblue); 
+    cursor: pointer;
 }
 
 h1 { margin: 0; }
@@ -110,8 +122,8 @@ p, address { line-height: 160%; }
     position: relative;
     flex-direction: column;
     height: 75vh;
-    margin: 0 2rem;
-    padding: 5rem 0 15rem 0;
+    margin-bottom: 12rem;
+    padding: 8rem 0 24rem 0;
     outline: 0.7rem solid var(--lightblue);
     outline-offset: -2rem;
 }
@@ -145,8 +157,8 @@ p, address { line-height: 160%; }
     position: absolute;
     bottom: 0;
     width: 90%;
-    height: 35%;
-    margin-bottom: 10rem;
+    height: 45%;
+    margin-bottom: 8rem;
     background: var(--lightblue);
     z-index: -1;
 }
@@ -215,14 +227,14 @@ p, address { line-height: 160%; }
 }
 
 #full-contact { grid-area: contact; }
-#full-contact .social-media {
+.social-media {
     flex-direction: row;
     gap: 1rem;
-    margin: 1rem 0 0 0;
+    margin: 0;
     padding: 0;
 }
-#site-map { grid-area: sitemap; }
 #resources { grid-area: resources; }
+#site-map { grid-area: sitemap; }
 .links {
     align-items: flex-start;
     justify-content: flex-start;
@@ -237,7 +249,11 @@ p, address { line-height: 160%; }
     flex-direction: row;
     justify-content: space-between;
     width: 90%;
-    margin: 1rem 0;
+    margin: 2rem 0 1rem 0;
     padding: 0;
 }
-.copyright h4 { margin: 0; padding: 0;}
+.copyright h5 { 
+    margin: 0; 
+    padding: 0;
+    color: var(--mediumblue);
+}
