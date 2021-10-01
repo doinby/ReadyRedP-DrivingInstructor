@@ -36,7 +36,7 @@ nav, section, footer, ul {
 nav { 
     padding-top: 1rem;
     padding-bottom: 1rem;
-    align-items: flex-end;
+    align-items: baseline;
     justify-content: space-between;
 }
 
@@ -210,20 +210,32 @@ p, address { line-height: 160%; }
     display: grid;
     grid-template-columns: 30% 40% 30%;
     grid-template-areas: "title title title"
-    "card  card  card";
-    place-content: center;
-    margin: 0 10rem;
+                         "card  card  card";
+    align-items: flex-start;
 }
 #price-package h2 { grid-area: title; }
-
-#price-package .price-card {
-    padding: 4rem;
+#price-package h3 { margin: 0; }
+.price-card {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-#price-package .card-highlight {
-    outline: 0.7rem solid var(--yellow);
+.price-card p { margin: 1rem 0 0 0;}
+.price-card-info { 
+    width: 70%; 
+    margin: 2rem 0 2rem 0;
+}
+.price-card-info ol { margin: 0; padding-left: 1rem; }
+.price-card-info ol li { list-style: circle; }
+.card-highlight {
+    outline: 0.7rem solid var(--lightblue);
     outline-offset: 1rem;
-    font-size: 22px;
-    z-index: -1;
+    font-size: 20px;
+}
+.card-highlight h3, .card-highlight p { 
+    font-weight: bold; 
+    color: var(--orange);
 }
 
 #full-contact { grid-area: contact; }
@@ -256,4 +268,25 @@ p, address { line-height: 160%; }
     margin: 0; 
     padding: 0;
     color: var(--mediumblue);
+}
+
+/* SMARTPHONES PORTRAIT */
+
+@media only screen and (min-width: 300px) {}
+
+
+/* SMARTPHONES LANDSCAPE */
+
+@media only screen and (min-width: 480px) {}
+
+
+/* TABLETS PORTRAIT */
+
+@media only screen and (min-width: 768px) {}
+
+
+/* TABLET LANDSCAPE / DESKTOP */
+
+@media only screen and (min-width: 1024px) {
+    
 }

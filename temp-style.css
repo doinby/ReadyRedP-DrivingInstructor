@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,800;1,400;1,800&display=swap');
+
+:root {
+    --darkblue: #023047;
+    --lightblue: #8ecae6;
+    --mediumblue: #219ebc;
+    --orange: #fb8500;
+    --yellow: #ffb703;
+    --yellow30: rgba(255, 183, 3, 0.3);
+    --yellow50: rgba(255, 183, 3, 0.5);
+    --black: #293241;
+}
+
+/* ===============
+GLOBAL SETTINGS 
+=============== */
+
+* {
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+html, body, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+}
+
+header, section, footer, ul {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+section, footer { 
+    padding: 5% 0; 
+}
+
+img { max-width: 95%; }
+
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+a:hover, a:active { color: var(--mediumblue); }
+
+button {
+    padding: 1rem 1.2rem; 
+    border: none;
+    background: var(--orange);
+    color: white;
+    font-size: medium;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+button:hover, button:active {
+    background: var(--mediumblue);
+    cursor: pointer;
+}
+
+ul { flex-direction: column; }
+
+li { list-style: none; }
+
+h1, h2, h3, h4, h5 { 
+    text-align: center;
+}
+
+h1 { margin: 0; }
+
+h2 { 
+    margin: 2rem 5% 1rem 5%;
+    font-size: 1rem; 
+}
+
+h3, blockquote { font-size: 2rem; }
+
+#ribbon { width: 110%; }
+
+#hero, .quote-paragraph, .price-card-highlight::after {
+    outline: 0.4rem solid var(--lightblue);
+}
+
+/* ===============
+HEADER
+=============== */
+
+header {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header ul { flex-direction: row; }
+
+header ul li { margin-left: 1rem; }
+
+#ribbon {
+    padding: 1rem 0;
+    background: var(--darkblue);
+    color: white;
+    text-align: center;
+    font-weight: 800;
+}
+
+/* ===============
+HERO
+=============== */
+
+#hero {
+    position: relative;
+    width: 100%;
+    padding: 5% 2rem 6rem 2rem;
+    outline-offset: -1rem;
+}
+
+#hero h2 { 
+    margin-bottom: 0; 
+    font-size: 2rem;
+}
+
+#hero .subheader {
+    margin: 0.5rem 0 2rem 0;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--mediumblue);
+}
+
+#hero img {
+    position: absolute;
+    bottom: 0;
+    place-self: center;
+    z-index: -1;
+}
+
+/* ===============
+FEATURE1
+=============== */
+
+.feature1-card {
+    position: relative;
+    padding: 2rem;
+}
+
+.feature1-card::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 60%;
+    background: var(--lightblue);
+    z-index: -1;
+}
+
+.feature1-card h3 { 
+    width: 70%;
+    margin-left: 1rem;
+    line-height: 100%;
+    text-align: left; 
+}
+.feature1-card p { margin: 0 0 0 1rem; }
+
+/* ===============
+TESTIMONIES
+=============== */
+
+.quote-paragraph {
+    /* outline-offset: 1rem; */
+    margin: 1rem;
+    padding: 2rem;
+}
+
+.customer-quote {
+    position: relative;
+    display: grid;
+    /* Use row height to adjust interlap between quote and image */
+    grid-template-rows: 1.35fr 1fr;
+}
+
+.quote-paragraph blockquote, .quote-paragraph p { margin: 0; }
+
+.quote-paragraph blockquote {
+    font-weight: bold;
+}
+
+#vision {
+    place-self: center;
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    z-index: -1;
+}
+
+#worked-with {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    place-items: center;
+    margin-top: 2rem;
+    opacity: 0.75;
+}
+
+#worked-with img { height: 2rem; width: auto; }
+
+/* ===============
+PRICE PACKAGE
+=============== */
+
+.price-card {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    width: 100%;
+    padding: 2rem 1rem;
+    background: var(--yellow30);
+}
+
+.price-card h3 { margin: 0 0 0.5rem 0; }
+
+.price-card p { font-weight: bold; }
+
+.benefit-list { width: 80%; }
+
+.benefit-list li { list-style: circle; }
+
+.price-card-highlight { 
+    position: relative;
+    font-size: 1.2rem;
+}
+
+.price-card-highlight::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 90%;
+    height: 100%;
+    outline-color: var(--orange);
+    z-index: -1;
+}
+
+/* ===============
+FOOTER
+=============== */
+
+footer ul { 
+    flex-direction: row; 
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* SMARTPHONES LANDSCAPE */
+
+@media only screen and (min-width: 480px) {}
+
+
+/* TABLETS PORTRAIT */
+
+@media only screen and (min-width: 768px) {}
+
+
+/* TABLET LANDSCAPE / DESKTOP */
+
+@media only screen and (min-width: 1024px) {}

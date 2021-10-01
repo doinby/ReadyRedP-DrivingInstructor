@@ -1,6 +1,9 @@
-const $logoContainer = document.querySelector('.worked-with');
+const $logoContainer = document.querySelector('#worked-with');
 const $priceContainers = document.querySelectorAll('.price');
 const $copyrightYear = document.querySelector('#copyright-year');
+const $firstFeature1Card = document.querySelector('.feature1-card');
+const $sections = document.querySelectorAll('section');
+const $lastSection = $sections[$sections.length - 1];
 
 const logoNames = [
     'asgardia',
@@ -18,9 +21,15 @@ const lessonPack = [0, 10, 20];
 
 
 window.onload = () => {
+    // Fix spacing on first feature1 card
+    $firstFeature1Card.style.paddingTop = 0;
+
+    // Fix spacing on last section
+    $lastSection.style.paddingBottom = 0;
+
     function addLogoImages() {
         for(let i in logoNames) {
-            logoPaths += `<img src="images/logos/${logoNames[i]}${fileType}" alt="${logoNames[i]}'s company logos">`;
+            logoPaths += `<img src='images/logos/${logoNames[i]}${fileType}' alt='${logoNames[i]}'s company logos'>`;
         }
         // Populate logos images to logo container
         $logoContainer.innerHTML = logoPaths;
