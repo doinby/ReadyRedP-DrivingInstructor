@@ -48,7 +48,7 @@ section, footer {
     padding: 5% 0; 
 }
 
-img { max-width: 95%; }
+img { max-width: 95%; display: block; }
 
 a {
     text-decoration: none;
@@ -84,7 +84,7 @@ h1 { margin: 0; }
 
 h2 { 
     margin: 2rem 5% 1rem 5%;
-    font-size: 1rem; 
+    font-size: 1.3rem; 
 }
 
 h3, blockquote { font-size: 2rem; }
@@ -103,7 +103,7 @@ header {
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
-    width: 100%;
+    width: 90%;
 }
 
 header ul { flex-direction: row; }
@@ -125,7 +125,7 @@ HERO
 #hero {
     position: relative;
     width: 100%;
-    padding: 5% 2rem 6rem 2rem;
+    padding: 5% 2rem 25% 2rem;
     outline-offset: -1rem;
 }
 
@@ -149,6 +149,12 @@ HERO
     z-index: -1;
 }
 
+/* TABLETS PORTRAIT */
+
+@media only screen and (min-width: 768px) {
+    #hero { padding: 10% 2rem 20% 2rem; }
+}
+
 /* ===============
 FEATURE1
 =============== */
@@ -158,12 +164,14 @@ FEATURE1
     padding: 2rem;
 }
 
+.feature1-card:first-of-type { padding-top: 0; }
+
 .feature1-card::before {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 60%;
     background: var(--lightblue);
     z-index: -1;
@@ -176,6 +184,31 @@ FEATURE1
     text-align: left; 
 }
 .feature1-card p { margin: 0 0 0 1rem; }
+
+/* TABLETS PORTRAIT */
+
+@media only screen and (min-width: 768px) {
+    .feature1-card { padding: 2rem 25%; }
+}
+
+/* TABLET LANDSCAPE / DESKTOP */
+
+@media only screen and (min-width: 1024px) {
+    #feature1 {
+        display: grid;
+        grid-template-areas: "title title title"
+                             "card card card";
+        grid-template-columns: repeat(3, 30%);
+    }
+
+    #feature1 h2 { grid-area: title; }
+
+    .feature1-card {
+        padding: 2rem;
+        height: 100%;
+    }
+    .feature1-card:first-of-type { padding-top: 2rem; }
+}
 
 /* ===============
 TESTIMONIES
@@ -221,11 +254,37 @@ TESTIMONIES
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     place-items: center;
+    width: 90%;
     margin-top: 2rem;
     opacity: 0.75;
 }
 
 #worked-with img { height: 2rem; width: auto; }
+
+/* TABLETS PORTRAIT */
+
+@media only screen and (min-width: 768px) {
+    .customer-quote { grid-template-rows: 1fr 2.15fr; }
+
+    #worked-with { 
+        justify-content: space-between;
+        gap: auto;
+    }
+}
+
+/* TABLET LANDSCAPE / DESKTOP */
+
+@media only screen and (min-width: 1024px) {
+    .customer-quote { grid-template-rows: 1fr 2.55fr; }
+
+    #worked-with {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 2rem;
+    }
+}
 
 /* ===============
 PRICE PACKAGE
@@ -267,10 +326,39 @@ PRICE PACKAGE
 FOOTER
 =============== */
 
+footer { padding-bottom: 0; }
+
 footer ul { 
     flex-direction: row; 
     flex-wrap: wrap;
     gap: 1rem;
+}
+
+/* TABLETS PORTRAIT */
+
+@media only screen and (min-width: 768px) {
+    footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 0 5%;
+    }
+
+    footer h4 { text-align: left; }
+
+    #resources ul { 
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #copyright { width: 100%; }
+}
+
+/* TABLET LANDSCAPE / DESKTOP */
+
+@media only screen and (min-width: 1024px) {
+    footer { justify-content: space-between; }
 }
 
 /* SMARTPHONES LANDSCAPE */
@@ -280,7 +368,9 @@ footer ul {
 
 /* TABLETS PORTRAIT */
 
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+    
+}
 
 
 /* TABLET LANDSCAPE / DESKTOP */

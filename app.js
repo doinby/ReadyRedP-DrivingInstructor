@@ -22,10 +22,10 @@ const lessonPack = [0, 10, 20];
 
 window.onload = () => {
     // Fix spacing on first feature1 card
-    $firstFeature1Card.style.paddingTop = 0;
+    // $firstFeature1Card.style.paddingTop = 0;
 
     // Fix spacing on last section
-    $lastSection.style.paddingBottom = 0;
+    // $lastSection.style.paddingBottom = 0;
 
     function addLogoImages() {
         for(let i in logoNames) {
