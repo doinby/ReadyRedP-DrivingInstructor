@@ -191,12 +191,20 @@ TESTIMONIES
     position: relative;
     display: grid;
     /* Use row height to adjust interlap between quote and image */
-    grid-template-rows: 1.35fr 1fr;
+    grid-template-rows: 1.45fr 1fr;
 }
 
-.quote-paragraph blockquote, .quote-paragraph p { margin: 0; }
+.quote-paragraph p { margin: 0; }
+
+.quote-paragraph blockquote::before {
+    content: '\275D';
+    position: absolute;
+    top: 1rem;
+    font-size: 5rem;
+}
 
 .quote-paragraph blockquote {
+    margin: 2rem 0 0 0;
     font-weight: bold;
 }
 
