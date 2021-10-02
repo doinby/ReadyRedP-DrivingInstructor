@@ -17,7 +17,7 @@ GLOBAL SETTINGS
 
 * {
     box-sizing: border-box;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 html, body, p {
@@ -197,12 +197,12 @@ FEATURE1
     #feature1 {
         display: grid;
         grid-template-areas: "title title title"
-                             "card card card";
+        "card card card";
         grid-template-columns: repeat(3, 30%);
     }
-
+    
     #feature1 h2 { grid-area: title; }
-
+    
     .feature1-card {
         padding: 2rem;
         height: 100%;
@@ -264,7 +264,7 @@ TESTIMONIES
 
 @media only screen and (min-width: 768px) {
     .customer-quote { grid-template-rows: 1fr 2.15fr; }
-
+    
     #worked-with { 
         justify-content: space-between;
         gap: auto;
@@ -276,17 +276,24 @@ TESTIMONIES
 @media only screen and (min-width: 1024px) {
     .customer-quote { 
         grid-template-areas: "quote vision";
-        grid-template-columns: 30% 60%;
+        grid-template-columns: 55% 45%;
         grid-template-rows: 1fr;
+        width: 90%;
     }
     
-    .quote-paragraph { grid-area: quote; }
+    .quote-paragraph { 
+        grid-area: quote; 
+        place-self: flex-end;
+        width: 24rem;
+        margin-bottom: 4rem;
+    }
     
     #vision { 
+        left: -3rem;
         grid-area: vision;
-        height: 100%; 
+        place-self: center;
     }
-
+    
     #worked-with {
         display: flex;
         flex-direction: row;
@@ -332,6 +339,26 @@ PRICE PACKAGE
     z-index: -1;
 }
 
+/* TABLET LANDSCAPE / DESKTOP */
+
+@media only screen and (min-width: 1024px) {
+    #price-package{ 
+        flex-direction: row; 
+        flex-wrap: wrap;
+        background: var(--yellow30);
+    }
+    
+    #price-package h2 { 
+        width: 100%; 
+        margin-top: 0;
+    }
+    
+    .price-card {
+        width: 30%;
+        background: none;
+    }
+}
+
 /* ===============
 FOOTER
 =============== */
@@ -351,26 +378,66 @@ footer ul {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: flex-start;
-        justify-content: flex-start;
+        justify-content: space-between;
         margin: 0 5%;
     }
-
+    
     footer h4 { text-align: left; }
+    
+    footer article { width: 30%; }
 
-    #resources ul { 
+    #full-contact ul { row-gap: 0; }
+
+    #resources ul, #site-map ul { 
         flex-direction: column;
         align-items: flex-start;
     }
-
+    
     #copyright { width: 100%; }
 }
 
 /* TABLET LANDSCAPE / DESKTOP */
 
 @media only screen and (min-width: 1024px) {
-    footer { justify-content: space-between; }
+    footer { 
+        display: grid;
+        grid-template-areas: "contact sitemap resources"
+        "copyright copyright copyright";
+        grid-template-columns: repeat(3, 1fr);
+        place-content: center;
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        background: var(--lightblue);
+    }
+    
+    #full-contact, #site-map, #resources { width: 80%; }
+    
+    #site-map ul, #resources ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    #site-map li, #resources li { margin-bottom: 1rem; }
+    
+    #full-contact { grid-area: contact; }
+    
+    #site-map { grid-area: sitemap; }
+    
+    #site-map ul {
+        flex-directioN: column;
+        align-items: flex-start;
+    }
+    
+    #resources { grid-area: resources; }
+    
+    #copyright { grid-area: copyright; }
 }
 
+/* ===============
+MISC.
+=============== */
 /* SMARTPHONES LANDSCAPE */
 
 @media only screen and (min-width: 480px) {}
