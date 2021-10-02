@@ -17,7 +17,7 @@ GLOBAL SETTINGS
 
 * {
     box-sizing: border-box;
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 
 html, body, p {
@@ -89,7 +89,7 @@ h2 {
 
 h3, blockquote { font-size: 2rem; }
 
-#ribbon { width: 110%; }
+#ribbon { width: 100%; }
 
 #hero, .quote-paragraph, .price-card-highlight::after {
     outline: 0.4rem solid var(--lightblue);
@@ -245,7 +245,6 @@ TESTIMONIES
     place-self: center;
     position: absolute;
     bottom: 0;
-    max-width: 100%;
     z-index: -1;
 }
 
@@ -275,7 +274,18 @@ TESTIMONIES
 /* TABLET LANDSCAPE / DESKTOP */
 
 @media only screen and (min-width: 1024px) {
-    .customer-quote { grid-template-rows: 1fr 2.55fr; }
+    .customer-quote { 
+        grid-template-areas: "quote vision";
+        grid-template-columns: 30% 60%;
+        grid-template-rows: 1fr;
+    }
+    
+    .quote-paragraph { grid-area: quote; }
+    
+    #vision { 
+        grid-area: vision;
+        height: 100%; 
+    }
 
     #worked-with {
         display: flex;
